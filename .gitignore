@@ -30,3 +30,23 @@ fastlane/test_output
 
 # Capture screenshots
 /captures/
+
+# Todos los logs de Java/Android Studio
+hs_err_pid*
+replay_pid*
+*.hprof
+java_error*.log
+idea.log
+
+# Cualquier archivo de log en general
+*.log
+*.log.*
+
+# Directorios de logs
+log/
+logs/
+
+# Kotlin/Java específico
+.kotlin/
+kotlin/
+kotlin-js-store/
