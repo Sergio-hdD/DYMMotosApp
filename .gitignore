@@ -1,15 +1,32 @@
+# Android Studio / IntelliJ
+.idea/
 *.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
+*.iws
+*.ipr
+
+# Gradle
+.gradle/
+build/
+out/
+
+# Local configuration
 local.properties
+*.keystore
+*.jks
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# External native build
+.externalNativeBuild/
+.cxx/
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+
+# Capture screenshots
+/captures/
