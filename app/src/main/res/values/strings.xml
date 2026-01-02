@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">DYMMotosApp</string>
     <string name="todo">TODO</string>
+    <string name="send">Send</string>
 </resources>
