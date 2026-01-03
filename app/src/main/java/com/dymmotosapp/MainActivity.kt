@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.gson.Gson
 import com.google.mlkit.vision.common.InputImage
 import com.google.mlkit.vision.text.Text
 import com.google.mlkit.vision.text.TextRecognition
@@ -68,10 +69,11 @@ class MainActivity : AppCompatActivity() {
 
                     val ids = EntregaParser.extraerIds(textoOCR)
                     val viajes = EntregaParser.parseBloques(textoOCR, ids)
+                    
+                    val gson = Gson()
+                    val jsonViajes = gson.toJson(viajes)
 
-                    viajes.forEach {
-                        Log.d("VIAJE", it.toString())
-                    }
+                    Log.d("JSON_VIAJES", jsonViajes)
                 }
                 .addOnFailureListener {
                     Toast.makeText(this, "Error leyendo texto", Toast.LENGTH_SHORT).show()
