@@ -62,9 +62,13 @@ class MainActivity : AppCompatActivity() {
 
             recognizer.process(image)
                 .addOnSuccessListener { visionText: Text ->
-                    val text = visionText.text
-                    Toast.makeText(this, text.take(200), Toast.LENGTH_LONG).show()
-                    println("TEXTO OCR:\n$text")
+                    val rawText = visionText.text
+
+                    val entregas = EntregaParser.parse(rawText)
+
+                    entregas.forEach {
+                        println(it)
+                    }
                 }
                 .addOnFailureListener {
                     Toast.makeText(this, "Error leyendo texto", Toast.LENGTH_SHORT).show()
