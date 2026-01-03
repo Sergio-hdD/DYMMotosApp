@@ -63,14 +63,14 @@ class MainActivity : AppCompatActivity() {
 
             recognizer.process(image)
                 .addOnSuccessListener { visionText: Text ->
-                    val rawText = visionText.text
 
-                    val entregas = EntregaParser.parse(rawText)
+                    val textoOCR = visionText.text
 
-                    entregas.forEach {
-                        // println(it)
-                        //Log.d("OCR_ENTREGA", it.toString())
-                        Log.d("OCR_ENTREGA", "Parsed: $it")
+                    val ids = EntregaParser.extraerIds(textoOCR)
+                    val viajes = EntregaParser.parseBloques(textoOCR, ids)
+
+                    viajes.forEach {
+                        Log.d("VIAJE", it.toString())
                     }
                 }
                 .addOnFailureListener {
