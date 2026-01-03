@@ -3,6 +3,7 @@ package com.dymmotosapp
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
@@ -67,7 +68,9 @@ class MainActivity : AppCompatActivity() {
                     val entregas = EntregaParser.parse(rawText)
 
                     entregas.forEach {
-                        println(it)
+                        // println(it)
+                        //Log.d("OCR_ENTREGA", it.toString())
+                        Log.d("OCR_ENTREGA", "Parsed: $it")
                     }
                 }
                 .addOnFailureListener {
